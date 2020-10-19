@@ -1,5 +1,6 @@
 const express = require("express")
 const welcomeRouter = require("./welcome/welcome-router")
+const carsRouter = require("./cars/cars-router")
 
 const server = express()
 const port = process.env.PORT || 5000
@@ -7,6 +8,7 @@ const port = process.env.PORT || 5000
 server.use(express.json())
 
 server.use(welcomeRouter)
+server.use(carsRouter)
 
 server.use((err, req, res, next) => {
 	console.log(err)
